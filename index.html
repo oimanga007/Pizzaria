@@ -1,0 +1,1035 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizzaria</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="pizza.png" type="image/x-icon">
+  </head>
+  <body>
+    <!--TUDO DO CARRINHO-->
+    <button class="carrinho" onclick="carrinho()">
+      <i class="fa-solid fa-cart-shopping"><sup class="num_carrinho"></sup></i>
+    </button>
+    <div class="carrinho_aba">
+      <div class="demontrar_carrinho">
+        <h2><i class="fa-solid fa-cart-shopping"></i>Meu carrinho</h2>
+        <button class="carrinho_delet" onclick="carrinho_delet()">X</button>
+      </div>
+
+      <div class="pizzas_carrinho_pai">
+        <div class="compra_carrinho"></div>
+        <div class="div_da_finalização">
+          <div class="pizzas_quantidade"></div>
+          <p class="cor">Total: <span class="preco_total"></span></p>
+         
+          <button class="finalizar_compra_wt">
+            finalizar compra no whatsapp <i class="fa-brands fa-whatsapp"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--TUDO DO CARRINHO-->
+    <button class="contato"><i class="fa-brands fa-whatsapp"></i></button>
+    <header>
+      <h1>Pizzaria</h1>
+      <p class="p_header">cardapio</p>
+    </header>
+    <main>
+      <section>
+        <!--FILTRO DE PIZZAS-->
+        <div class="filtro">
+          <input
+            type="text"
+            class="procura"
+            placeholder="Procure pela sua pizza..."
+          />
+          <button id="todos" class="os_filtros" onclick="todos()">
+            <p>Todos</p>
+            <span>80</span>
+          </button>
+          <button id="vegana" class="os_filtros" onclick="pizza_vegana()">
+            <p>vegana</p>
+            <span>25</span>
+          </button>
+          <button id="Pizza_Doce" class="os_filtros" onclick="pizza_doce()">
+            <p>Pizzaz doce</p>
+            <span>10</span>
+          </button>
+          <button
+            id="Pizza_Salgada"
+            class="os_filtros"
+            onclick="pizza_salgada()"
+          >
+            <p>Pizza Salgada</p>
+            <span>45</span>
+          </button>
+        </div>
+        <!--FILTRO DE PIZZAS FIM -->
+        <!--PIZZAS-->
+        <div class="pizzas">
+          <!-- 25 PIZZAS VEGANAS -->
+
+       <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Marguerita</p>
+            <p class="valor_pizza">R$ 42,90</p>
+            <button
+              data-nome="Pizza Vegana de Marguerita"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Brócolis</p>
+            <p class="valor_pizza">R$ 44,90</p>
+            <button
+              data-nome="Pizza Vegana de Brócolis"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Palmito</p>
+            <p class="valor_pizza">R$ 49,90</p>
+            <button
+              data-nome="Pizza Vegana de Palmito"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Rúcula</p>
+            <p class="valor_pizza">R$ 44,90</p>
+            <button
+              data-nome="Pizza Vegana de Rúcula"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Abobrinha</p>
+            <p class="valor_pizza">R$ 42,90</p>
+            <button
+              data-nome="Pizza Vegana de Abobrinha"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Berinjela</p>
+            <p class="valor_pizza">R$ 42,90</p>
+            <button
+              data-nome="Pizza Vegana de Berinjela"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Cogumelos</p>
+            <p class="valor_pizza">R$ 49,90</p>
+            <button
+              data-nome="Pizza Vegana de Cogumelos"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Milho</p>
+            <p class="valor_pizza">R$ 39,90</p>
+            <button
+              data-nome="Pizza Vegana de Milho"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Escarola</p>
+            <p class="valor_pizza">R$ 42,90</p>
+            <button
+              data-nome="Pizza Vegana de Escarola"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Tomate Seco</p>
+            <p class="valor_pizza">R$ 49,90</p>
+            <button
+              data-nome="Pizza Vegana de Tomate Seco"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Legumes</p>
+            <p class="valor_pizza">R$ 42,90</p>
+            <button
+              data-nome="Pizza Vegana de Legumes"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Cebola Caramelizada</p>
+            <p class="valor_pizza">R$ 44,90</p>
+            <button
+              data-nome="Pizza Vegana de Cebola Caramelizada"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Pimentão</p>
+            <p class="valor_pizza">R$ 39,90</p>
+            <button
+              data-nome="Pizza Vegana de Pimentão"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Espinafre</p>
+            <p class="valor_pizza">R$ 44,90</p>
+            <button
+              data-nome="Pizza Vegana de Espinafre"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Alho-Poró</p>
+            <p class="valor_pizza">R$ 44,90</p>
+            <button
+              data-nome="Pizza Vegana de Alho-Poró"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Azeitonas</p>
+            <p class="valor_pizza">R$ 42,90</p>
+            <button
+              data-nome="Pizza Vegana de Azeitonas"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Tofu</p>
+            <p class="valor_pizza">R$ 49,90</p>
+            <button
+              data-nome="Pizza Vegana de Tofu"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Pesto Vegano</p>
+            <p class="valor_pizza">R$ 49,90</p>
+            <button
+              data-nome="Pizza Vegana de Pesto Vegano"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Abóbora</p>
+            <p class="valor_pizza">R$ 42,90</p>
+            <button
+              data-nome="Pizza Vegana de Abóbora"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Couve-Flor</p>
+            <p class="valor_pizza">R$ 42,90</p>
+            <button
+              data-nome="Pizza Vegana de Couve-Flor"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Shimeji</p>
+            <p class="valor_pizza">R$ 52,90</p>
+            <button
+              data-nome="Pizza Vegana de Shimeji"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Champignon</p>
+            <p class="valor_pizza">R$ 49,90</p>
+            <button
+              data-nome="Pizza Vegana de Champignon"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Batata</p>
+            <p class="valor_pizza">R$ 39,90</p>
+            <button
+              data-nome="Pizza Vegana de Batata"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana de Cenoura</p>
+            <p class="valor_pizza">R$ 39,90</p>
+            <button
+              data-nome="Pizza Vegana de Cenoura"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Vegana Especial da Casa</p>
+            <p class="valor_pizza">R$ 54,90</p>
+            <button
+              data-nome="Pizza Vegana Especial da Casa"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <!-- 10 PIZZAS DOCES -->
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Chocolate</p>
+            <p class="valor_pizza">R$ 44,90</p>
+            <button
+              data-nome="Pizza de Chocolate"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Brigadeiro</p>
+            <p class="valor_pizza">R$ 47,90</p>
+            <button
+              data-nome="Pizza de Brigadeiro"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Morango com Chocolate</p>
+            <p class="valor_pizza">R$ 52,90</p>
+            <button
+              data-nome="Pizza de Morango com Chocolate"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Banana com Canela</p>
+            <p class="valor_pizza">R$ 39,90</p>
+            <button
+              data-nome="Pizza de Banana com Canela"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Romeu e Julieta</p>
+            <p class="valor_pizza">R$ 44,90</p>
+            <button
+              data-nome="Pizza de Romeu e Julieta"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Doce de Leite</p>
+            <p class="valor_pizza">R$ 44,90</p>
+            <button
+              data-nome="Pizza de Doce de Leite"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Prestígio</p>
+            <p class="valor_pizza">R$ 47,90</p>
+            <button
+              data-nome="Pizza de Prestígio"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Paçoca</p>
+            <p class="valor_pizza">R$ 44,90</p>
+            <button data-nome="Pizza de Paçoca" onclick="pizzas_carrinho(this)">
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Nutella com Morango</p>
+            <p class="valor_pizza">R$ 59,90</p>
+            <button
+              data-nome="Pizza de Nutella com Morango"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Chocolate Branco</p>
+            <p class="valor_pizza">R$ 49,90</p>
+            <button
+              data-nome="Pizza de Chocolate Branco"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <!-- 45 PIZZAS SALGADAS -->
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Calabresa</p>
+            <p class="valor_pizza">R$ 44,90</p>
+            <button
+              data-nome="Pizza de Calabresa"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Mussarela</p>
+            <p class="valor_pizza">R$ 42,90</p>
+            <button
+              data-nome="Pizza de Mussarela"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Portuguesa</p>
+            <p class="valor_pizza">R$ 49,90</p>
+            <button
+              data-nome="Pizza Portuguesa"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Frango com Catupiry</p>
+            <p class="valor_pizza">R$ 49,90</p>
+            <button
+              data-nome="Pizza de Frango com Catupiry"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Quatro Queijos</p>
+            <p class="valor_pizza">R$ 54,90</p>
+            <button
+              data-nome="Pizza de Quatro Queijos"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Pepperoni</p>
+            <p class="valor_pizza">R$ 59,90</p>
+            <button
+              data-nome="Pizza de Pepperoni"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Bacon</p>
+            <p class="valor_pizza">R$ 49,90</p>
+            <button data-nome="Pizza de Bacon" onclick="pizzas_carrinho(this)">
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Presunto e Queijo</p>
+            <p class="valor_pizza">R$ 44,90</p>
+            <button
+              data-nome="Pizza de Presunto e Queijo"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Atum</p>
+            <p class="valor_pizza">R$ 49,90</p>
+            <button data-nome="Pizza de Atum" onclick="pizzas_carrinho(this)">
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Sardinha</p>
+            <p class="valor_pizza">R$ 44,90</p>
+            <button
+              data-nome="Pizza de Sardinha"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Napolitana</p>
+            <p class="valor_pizza">R$ 44,90</p>
+            <button
+              data-nome="Pizza Napolitana"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Margherita</p>
+            <p class="valor_pizza">R$ 44,90</p>
+            <button
+              data-nome="Pizza Margherita"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Lombo Canadense</p>
+            <p class="valor_pizza">R$ 54,90</p>
+            <button
+              data-nome="Pizza de Lombo Canadense"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Milho com Bacon</p>
+            <p class="valor_pizza">R$ 47,90</p>
+            <button
+              data-nome="Pizza de Milho com Bacon"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Frango com Milho</p>
+            <p class="valor_pizza">R$ 47,90</p>
+            <button
+              data-nome="Pizza de Frango com Milho"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Carne Seca</p>
+            <p class="valor_pizza">R$ 59,90</p>
+            <button
+              data-nome="Pizza de Carne Seca"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Carne Moída</p>
+            <p class="valor_pizza">R$ 49,90</p>
+            <button
+              data-nome="Pizza de Carne Moída"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Strogonoff de Frango</p>
+            <p class="valor_pizza">R$ 54,90</p>
+            <button
+              data-nome="Pizza de Strogonoff de Frango"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Strogonoff de Carne</p>
+            <p class="valor_pizza">R$ 59,90</p>
+            <button
+              data-nome="Pizza de Strogonoff de Carne"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Camarão</p>
+            <p class="valor_pizza">R$ 74,90</p>
+            <button
+              data-nome="Pizza de Camarão"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Alho</p>
+            <p class="valor_pizza">R$ 39,90</p>
+            <button data-nome="Pizza de Alho" onclick="pizzas_carrinho(this)">
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Alho e Óleo</p>
+            <p class="valor_pizza">R$ 39,90</p>
+            <button
+              data-nome="Pizza de Alho e Óleo"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Palmito com Queijo</p>
+            <p class="valor_pizza">R$ 49,90</p>
+            <button
+              data-nome="Pizza de Palmito com Queijo"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Escarola com Bacon</p>
+            <p class="valor_pizza">R$ 49,90</p>
+            <button
+              data-nome="Pizza de Escarola com Bacon"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Rúcula com Tomate Seco</p>
+            <p class="valor_pizza">R$ 49,90</p>
+            <button
+              data-nome="Pizza de Rúcula com Tomate Seco"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Champignon com Queijo</p>
+            <p class="valor_pizza">R$ 52,90</p>
+            <button
+              data-nome="Pizza de Champignon com Queijo"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Cheddar com Bacon</p>
+            <p class="valor_pizza">R$ 54,90</p>
+            <button
+              data-nome="Pizza de Cheddar com Bacon"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Calabresa com Cebola</p>
+            <p class="valor_pizza">R$ 47,90</p>
+            <button
+              data-nome="Pizza de Calabresa com Cebola"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Calabresa com Catupiry</p>
+            <p class="valor_pizza">R$ 49,90</p>
+            <button
+              data-nome="Pizza de Calabresa com Catupiry"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Frango com Cheddar</p>
+            <p class="valor_pizza">R$ 52,90</p>
+            <button
+              data-nome="Pizza de Frango com Cheddar"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Frango com Bacon</p>
+            <p class="valor_pizza">R$ 52,90</p>
+            <button
+              data-nome="Pizza de Frango com Bacon"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Cinco Queijos</p>
+            <p class="valor_pizza">R$ 59,90</p>
+            <button
+              data-nome="Pizza de Cinco Queijos"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Queijo com Tomate</p>
+            <p class="valor_pizza">R$ 42,90</p>
+            <button
+              data-nome="Pizza de Queijo com Tomate"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Peito de Peru</p>
+            <p class="valor_pizza">R$ 54,90</p>
+            <button
+              data-nome="Pizza de Peito de Peru"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Pepperoni com Queijo</p>
+            <p class="valor_pizza">R$ 62,90</p>
+            <button
+              data-nome="Pizza de Pepperoni com Queijo"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Bacon com Cheddar</p>
+            <p class="valor_pizza">R$ 54,90</p>
+            <button
+              data-nome="Pizza de Bacon com Cheddar"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Linguiça Toscana</p>
+            <p class="valor_pizza">R$ 49,90</p>
+            <button
+              data-nome="Pizza de Linguiça Toscana"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Costela Desfiada</p>
+            <p class="valor_pizza">R$ 64,90</p>
+            <button
+              data-nome="Pizza de Costela Desfiada"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Picanha</p>
+            <p class="valor_pizza">R$ 74,90</p>
+            <button
+              data-nome="Pizza de Picanha"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Filé Mignon</p>
+            <p class="valor_pizza">R$ 74,90</p>
+            <button
+              data-nome="Pizza de Filé Mignon"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Parmesão</p>
+            <p class="valor_pizza">R$ 49,90</p>
+            <button
+              data-nome="Pizza de Parmesão"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Provolone</p>
+            <p class="valor_pizza">R$ 52,90</p>
+            <button
+              data-nome="Pizza de Provolone"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Gorgonzola</p>
+            <p class="valor_pizza">R$ 54,90</p>
+            <button
+              data-nome="Pizza de Gorgonzola"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza de Brócolis com Bacon</p>
+            <p class="valor_pizza">R$ 49,90</p>
+            <button
+              data-nome="Pizza de Brócolis com Bacon"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+          <div class="card_pizzas">
+            <div class="img_pizzas"><img src="" alt="" /></div>
+            <p class="nome_pizza">Pizza Especial da Casa</p>
+            <p class="valor_pizza">R$ 64,90</p>
+            <button
+              data-nome="Pizza Especial da Casa"
+              onclick="pizzas_carrinho(this)"
+            >
+              Carrinho <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+        </div>
+        <!--PIZZAS FIM-->
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

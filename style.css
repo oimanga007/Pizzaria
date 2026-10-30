@@ -311,7 +311,7 @@ main section {
 /* CARRINHO FLUTUANTE */
 .carrinho {
   position: fixed;
-  top: 22px;
+  top: 110px;
   right: clamp(16px, 4vw, 58px);
   z-index: 600;
   width: 52px;
@@ -787,7 +787,7 @@ main section {
   }
 
   .carrinho {
-    top: 17px;
+    top: 90px;
     right: 15px;
     width: 44px;
     height: 44px;
